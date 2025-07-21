@@ -1,7 +1,7 @@
 # custom_exception.py
 import sys
 import traceback
-from logger import logger
+from src.logger import logger
 
 def error_message_details(err, error_detail: sys):
     # Unpack the exception info
