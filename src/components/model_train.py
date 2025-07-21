@@ -151,25 +151,25 @@ class ModelTrainer:
             logger.error(f"Error in initiate_model_trainer: {e}")
             raise CustomException(e, sys)
 
-# This block executes only when the script is run directly.
-# It runs the full pipeline from data ingestion to model training.
-if __name__ == "__main__":
-    print("--- Running Full Training Pipeline ---")
+# # This block executes only when the script is run directly.
+# # It runs the full pipeline from data ingestion to model training.
+# if __name__ == "__main__":
+#     print("--- Running Full Training Pipeline ---")
     
-    # Step 1: Data Ingestion
-    data_ingestion = DataIngestion()
-    train_data_path, test_data_path, _ = data_ingestion.initiate_data_ingestion()
-    print(f"Data ingestion complete. Train path: {train_data_path}, Test path: {test_data_path}")
+#     # Step 1: Data Ingestion
+#     data_ingestion = DataIngestion()
+#     train_data_path, test_data_path, _ = data_ingestion.initiate_data_ingestion()
+#     print(f"Data ingestion complete. Train path: {train_data_path}, Test path: {test_data_path}")
 
-    # Step 2: Data Transformation
-    data_transformation = DataTransformation()
-    train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data_path, test_data_path)
-    print("Data transformation complete.")
+#     # Step 2: Data Transformation
+#     data_transformation = DataTransformation()
+#     train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data_path, test_data_path)
+#     print("Data transformation complete.")
 
-    # Step 3: Model Training
-    model_trainer = ModelTrainer()
-    final_r2_score = model_trainer.initiate_model_trainer(train_arr, test_arr)
+#     # Step 3: Model Training
+#     model_trainer = ModelTrainer()
+#     final_r2_score = model_trainer.initiate_model_trainer(train_arr, test_arr)
     
-    print("\n--- Pipeline Finished ---")
-    print(f"Final R2 Score of the best model: {final_r2_score}")
-    print("-------------------------")
+#     print("\n--- Pipeline Finished ---")
+#     print(f"Final R2 Score of the best model: {final_r2_score}")
+#     print("-------------------------")

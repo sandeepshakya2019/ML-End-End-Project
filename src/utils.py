@@ -66,9 +66,10 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, param):
             print(f"--- Evaluating Model: {model_name} ---")
 
             # Use GridSearchCV to find the best hyperparameters for the current model
-            # cv=3 means 3-fold cross-validation will be used
+            # cv=5 means 5-fold cross-validation will be used.
+            # n_jobs=-1 uses all available CPU cores to speed up the process.
             print(f"Performing GridSearchCV for {model_name}...")
-            gs = GridSearchCV(model, para, cv=3)
+            gs = GridSearchCV(model, para, cv=5, n_jobs=-1)
             gs.fit(X_train, y_train)
             print(f"Best parameters found: {gs.best_params_}")
 
@@ -100,7 +101,7 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, param):
         # If an error occurs, raise a custom exception
         raise CustomException(e, sys)
 
-def load_object(file_path):
+def load_Iobject(file_path):
     """
     Loads a Python object from a file using pickle.
 
