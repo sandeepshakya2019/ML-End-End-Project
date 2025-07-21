@@ -48,6 +48,9 @@ class DataIngestion:
             logger.info(f"[+] Train dataset saved at {self.ingestion_config.train_data_path}")
             logger.info(f"[+] Test dataset saved at {self.ingestion_config.test_data_path}")
 
+            print("[+] Data saved Done")
+
+
             # Return file paths for further processing
             return (
                 self.ingestion_config.train_data_path,
@@ -59,6 +62,6 @@ class DataIngestion:
             logger.error("[-] Error occurred during data ingestion")
             raise CustomException(e, sys)
 
-if __name__ == "__main__":
-    obj = DataIngestion()
-    obj.initiate_data_ingestion()
+# if __name__ == "__main__":
+#     obj = DataIngestion()
+#     obj.initiate_data_ingestion()
